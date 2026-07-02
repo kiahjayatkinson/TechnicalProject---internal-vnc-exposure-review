@@ -6,9 +6,6 @@
 
 ---
 
-![VNC/RFB session architecture](diagrams/diagram-1-vnc-architecture.svg)
-![Orphaned window failure sequence](diagrams/diagram-2-orphaned-window-sequence.svg)
-
 ## Summary
 
 While troubleshooting a frozen application error on a shared operations display (a live driver-tracking map, remotely controlled via VNC by multiple staff), I identified that the underlying remote access setup relied on legacy, largely unauthenticated **VNC (RFB protocol)** with no confirmed encryption in place. This is a common but frequently overlooked class of exposure in internal tooling — infrastructure that predates formal security review and keeps running because "it just works."
@@ -49,7 +46,7 @@ The troubleshooting process itself is documented separately below, but the more 
 
 **Root cause conclusion:** the visible dialog had become an orphaned window handle — the process that owned it had already exited or been killed, but the window itself was never cleaned up by the OS/DWM. This is a known (if uncommon) Windows behavior and is not remotely resolvable through standard process-termination tooling; it requires a session-level reset.
 
-![Orphaned window failure sequence](diagram-2-orphaned-window-sequence.svg)
+![Orphaned window failure sequence](diagrams/diagram-2-orphaned-window-sequence.svg)
 
 ---
 
@@ -59,7 +56,7 @@ Troubleshooting this incident meant walking through Task Manager's process tree 
 
 This raised the natural next question for anyone with a security mindset: **what does this remote access path actually look like from a threat model perspective?**
 
-![VNC/RFB session architecture](diagram-1-vnc-architecture.svg)
+![VNC/RFB session architecture](diagrams/diagram-1-vnc-architecture.svg)
 
 ### Why VNC/RFB is worth flagging
 
