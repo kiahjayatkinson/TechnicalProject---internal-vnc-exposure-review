@@ -1,0 +1,34 @@
+<svg width="680" height="430" viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Arial, Helvetica, sans-serif">
+<title>VNC remote access architecture for shared dispatch display</title>
+<desc>Staff workstations connect over an internal network to a shared dispatch host using the unencrypted RFB/VNC protocol on port 5900. The internal network has no confirmed path to the internet.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3d3d3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="270" y="30" width="140" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#2C2C2A">Internet</text>
+
+<line x1="340" y1="74" x2="340" y2="120" stroke="#5F5E5A" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+<line x1="334" y1="91" x2="346" y2="103" stroke="#A32D2D" stroke-width="2" stroke-linecap="round"/>
+<line x1="346" y1="91" x2="334" y2="103" stroke="#A32D2D" stroke-width="2" stroke-linecap="round"/>
+<text x="360" y="97" dominant-baseline="central" font-size="12" fill="#5F5E5A">No external path (confirmed)</text>
+
+<rect x="45" y="120" width="590" height="260" rx="20" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text x="64" y="150" font-size="14" font-weight="600" fill="#2C2C2A">Internal office network</text>
+
+<rect x="80" y="200" width="190" height="70" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="175" y="220" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#04342C">Staff workstations</text>
+<text x="175" y="242" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">Opens saved VNC config</text>
+
+<rect x="410" y="200" width="210" height="70" rx="12" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="515" y="220" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#26215C">Shared dispatch host</text>
+<text x="515" y="242" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">Runs TightVNC + map app</text>
+
+<line x1="270" y1="235" x2="410" y2="235" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="340" y="215" text-anchor="middle" font-size="12" fill="#5F5E5A">Port 5900 (RFB)</text>
+<text x="340" y="258" text-anchor="middle" font-size="12" fill="#5F5E5A">Often unencrypted</text>
+
+<text x="340" y="405" text-anchor="middle" font-size="12" fill="#5F5E5A">Teal = client device, purple = shared host, coral = unencrypted risk path</text>
+</svg>
